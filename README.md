@@ -4,15 +4,11 @@ Project Structure
 RestaurantService.java  RESTful web service implementation
 SoapService.java       SOAP web service implementation
 webservice-testing.http HTTP request file for testing endpoints
-RestaurantService.class  Compiled REST service class
-RestaurantService1.class  Inner class (handler or method)
-RestaurantService2.class  Inner class (handler or method)
-RestaurantService3.class Inner class (handler or method)
 
 Features
  REST API: Provides endpoints for restaurant-related operations (such as fetching menu data or handling orders).  
  SOAP Service: Implements a simple SOAP web service for structured XML-based communication.  
-HTTP Testing File: Includes `.http` file for easy testing using tools Postman. 
+HTTP Testing File: Includes .http file for easy testing using tools Postman. 
 
  How to Run
  For REST Service
