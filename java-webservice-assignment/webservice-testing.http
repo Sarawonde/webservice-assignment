@@ -1,0 +1,88 @@
+### =================================================
+### Web API Design and Testing Tools
+### Part 2: Testing REST and SOAP Services
+### Assignment: Web API Design and Testing Tools
+### =================================================
+
+@restBaseUrl = http://localhost:8090
+@soapBaseUrl = http://localhost:9999
+
+### =================================================
+### TEST REST API ENDPOINTS
+### =================================================
+
+### Test 1: Get All Menu Items (REST GET)
+GET {{restBaseUrl}}/api/menu
+
+### Test 2: Get Specific Menu Item (REST GET with path parameter)
+GET {{restBaseUrl}}/api/menu/2
+
+### Test 3: Create New Order (REST POST with JSON body)
+POST {{restBaseUrl}}/api/orders
+Content-Type: application/json
+
+{
+  "customerName": "saron ",
+  "items": [
+    {"itemId": 1, "quantity": 2},
+    {"itemId": 3, "quantity": 1}
+  ],
+  "total": 33.97
+}
+
+### =================================================
+### TEST SOAP API ENDPOINTS
+### =================================================
+
+### Test 4: Get Menu (SOAP Request)
+POST {{soapBaseUrl}}/soap
+Content-Type: text/xml
+SOAPAction: "getMenu"
+
+<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
+   <soap:Body>
+      <getMenuRequest/>
+   </soap:Body>
+</soap:Envelope>
+
+### Test 5: Place Order (SOAP Request)
+POST {{soapBaseUrl}}/soap
+Content-Type: text/xml
+SOAPAction: "placeOrder"
+
+<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
+   <soap:Body>
+      <placeOrderRequest>
+         <customerName>Alice Johnson</customerName>
+         <itemId>1</itemId>
+         <quantity>3</quantity>
+      </placeOrderRequest>
+   </soap:Body>
+</soap:Envelope>
+
+### Test 6: Calculate Total (SOAP Request)
+POST {{soapBaseUrl}}/soap
+Content-Type: text/xml
+SOAPAction: "calculateTotal"
+
+<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
+   <soap:Body>
+      <calculateTotalRequest>
+         <itemId>2</itemId>
+         <quantity>4</quantity>
+      </calculateTotalRequest>
+   </soap:Body>
+</soap:Envelope>
+
+### Test 7: Check Order Status (SOAP Request)
+POST {{soapBaseUrl}}/soap
+Content-Type: text/xml
+SOAPAction: "checkOrderStatus"
+
+<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
+   <soap:Body>
+      <checkOrderStatusRequest>
+         <orderId>1001</orderId>
+      </checkOrderStatusRequest>
+   </soap:Body>
+</soap:Envelope>
