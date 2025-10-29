@@ -83,7 +83,7 @@ REST vs SOAP Comparison
 |--------|------|------|
 | Protocol | HTTP | HTTP, SMTP, etc. |
 | Data Format | JSON | XML |
-| Standards | REST principles | WS-* standards |
+| Standards | REST principles | WS- standards |
 | Performance | Faster | Slower (XML parsing) |
 | Flexibility | High | Moderate |
 
