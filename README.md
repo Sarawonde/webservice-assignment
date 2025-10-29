@@ -54,11 +54,10 @@ Create new order
 POST http://localhost:8090/api/orders
 Content-Type: application/json
 
+
 {
   "customerName": "AYELE",
-  
   "items": [
-  
 {"itemId":1, "quantity": 2},
 {"itemId":3, "quantity": 1}
 ]
@@ -68,9 +67,9 @@ Content-Type: application/json
 Testing SOAP Endpoints
  Get menu via SOAP
 POST http://localhost:9999/soap
+
 Content-Type: text/xml
 SOAPAction: "getMenu"
-
 <soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
    <soap:Body>
       <getMenuRequest/>
